@@ -1,4 +1,5 @@
 import React from 'react';
+import {Card} from '@material-ui/core';
 
 class Form extends React.Component {
     state = {
@@ -36,6 +37,7 @@ class Form extends React.Component {
     }
     render() {
         return (
+            <Card>
              <form> 
                 <div>
                     <input name='firstName'
@@ -70,6 +72,7 @@ class Form extends React.Component {
                 </div>
                 <button onClick={e => this.onSubmit(e)}>Submit</button>
              </form>
+             </Card>
         );
     }
 }
