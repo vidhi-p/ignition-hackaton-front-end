@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import '../style/App.css';
-import Form from '../components/Form';
+import './App.css';
+import Form from './components/Form';
 
 class App extends Component {
   state = {
