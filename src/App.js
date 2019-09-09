@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import './App.css';
 import Form from './components/Form';
 import Navigation from './components/Navigation';
+import Recents from './components/Recents';
+import Favourites from './components/Favourites';
+import Branch from './components/Branch_Resouces';
 
 class App extends Component {
   state = {
@@ -19,10 +22,12 @@ class App extends Component {
     return (
        <div className='App'>
          <Navigation/>
-         <Form onChange={fields => this.onChange(fields)}/>
-         <p>
-           {JSON.stringify(this.state.fields, null, 2)}
-         </p>
+         <br/>
+         <Branch />
+         <br/>
+         <Recents/>
+         <br/>
+         <Favourites />
        </div>
     );
   }

@@ -14,6 +14,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import {MenuList} from '@material-ui/core';
+import Logo from '../logo.svg';
 
 const useStyles = makeStyles(theme => ({
   bar: {
@@ -84,11 +86,19 @@ const useStyles = makeStyles(theme => ({
 export default function Navagation() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorE2, setAnchorE2] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
+  function handleClick(event) {
+    setAnchorE2(event.currentTarget);
+  }
+
+  function handleClose() {
+    setAnchorEl(null);
+  }
   function handleProfileMenuOpen(event) {
     setAnchorEl(event.currentTarget);
   }
@@ -157,6 +167,11 @@ export default function Navagation() {
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
+            anchorEl={anchorE2}
+            anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
+                keepMounted
+                open={Boolean(anchorE2)}
+                onClose={handleClose}
           >
             <MenuIcon />
           </IconButton>
